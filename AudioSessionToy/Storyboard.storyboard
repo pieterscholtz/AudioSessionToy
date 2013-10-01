@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A584" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ywm-s8-3hN">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - Audio Session Inactive-->
+        <scene sceneID="ZlT-Dl-i2w">
+            <objects>
+                <viewController id="Y2I-wu-dSS" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gzD-dv-JpL"/>
+                        <viewControllerLayoutGuide type="bottom" id="4oQ-kk-718"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kzw-7o-lfS">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUr-sY-Jtq">
+                                <rect key="frame" x="0.0" y="149" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y2I-wu-dSS" id="Brk-nF-DJK"/>
+                                    <outlet property="delegate" destination="Y2I-wu-dSS" id="sEI-v5-bWK"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FUr-sY-Jtq" firstAttribute="leading" secondItem="kzw-7o-lfS" secondAttribute="leading" id="1DO-DA-2Bu"/>
+                            <constraint firstAttribute="centerY" secondItem="FUr-sY-Jtq" secondAttribute="centerY" id="Vvn-Jt-3FF"/>
+                            <constraint firstAttribute="trailing" secondItem="FUr-sY-Jtq" secondAttribute="trailing" id="hio-05-lrV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Audio Session Inactive" id="nFo-0p-htL">
+                        <barButtonItem key="rightBarButtonItem" id="njE-lx-m1I">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="98H-oV-VFi">
+                                <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="audioSessionActiveValueChanged:" destination="Y2I-wu-dSS" eventType="valueChanged" id="I2S-c5-Pt8"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="audioSessionActiveSwitch" destination="98H-oV-VFi" id="b0V-DG-R0w"/>
+                        <outlet property="pickerView" destination="FUr-sY-Jtq" id="UOx-F8-6xV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXQ-Em-iU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864" y="-44"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZgF-0u-wVc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="ywm-s8-3hN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="VOO-Ze-DB1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" id="QPZ-KO-2IT">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Y2I-wu-dSS" kind="relationship" relationship="rootViewController" id="bI9-eH-vGe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKt-cv-Iar" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="404" y="-44"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
